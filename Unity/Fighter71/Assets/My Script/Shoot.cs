@@ -7,6 +7,9 @@ public class Shoot : MonoBehaviour {
 	private float FireRate = 3.5f;
 	private float nextFire;
 
+	private RaycastHit hit;
+	private float range = 300;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -34,7 +37,12 @@ public class Shoot : MonoBehaviour {
 			nextFire = Time.time + FireRate;
 			Debug.Log ("pressed" + "fire " + nextFire);
 		} else {
-			Debug.Log ("Not pressed");
+
+			if (Physics.Raycast (transform.position, transform.forward, out hit, range)) {
+				Debug.Log (hit.transform.name);
+			}
+			//Debug.Log ("Not pressed");
+
 		}
 	}
 }
