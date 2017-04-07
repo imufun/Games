@@ -55,7 +55,13 @@ public class Shoot : MonoBehaviour {
 			Debug.DrawRay (myTransform.TransformPoint(0,0,1),myTransform.forward, Color.green, 3); 	 
 			if (Physics.Raycast (myTransform.TransformPoint(0,0,1), myTransform.forward, out hit, range)) 
 			{
-				Debug.Log (hit.transform.name);
+				if (hit.transform.CompareTag ("Enemy")) {
+					Debug.Log ("Enemy" + hit.transform.name);
+				} else {
+					Debug.Log ("NO Enemy there");
+				}
+					
+
 			}
 
 			//Debug.Log ("Not pressed");

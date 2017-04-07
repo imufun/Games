@@ -179,6 +179,7 @@
      <Compile Include="Assets\Fighter\Standard Assets\Vehicles\Car\Scripts\SkidTrail.cs" />
      <Compile Include="Assets\Fighter\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
      <Compile Include="Assets\Fighter\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
+     <Compile Include="Assets\My Script\FindEnemys.cs" />
      <Compile Include="Assets\My Script\Shoot.cs" />
      <Compile Include="Assets\My Script\Welcome.cs" />
      <None Include="Assets\Fighter\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
