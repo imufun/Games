@@ -182,6 +182,7 @@
      <Compile Include="Assets\My Script\Detaction.cs" />
      <Compile Include="Assets\My Script\FindEnemys.cs" />
      <Compile Include="Assets\My Script\Shoot.cs" />
+     <Compile Include="Assets\My Script\WalkThroughWalk.cs" />
      <Compile Include="Assets\My Script\Welcome.cs" />
      <None Include="Assets\Fighter\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Fighter\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
