@@ -181,6 +181,7 @@
      <Compile Include="Assets\Fighter\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
      <Compile Include="Assets\My Script\Detaction.cs" />
      <Compile Include="Assets\My Script\FindEnemys.cs" />
+     <Compile Include="Assets\My Script\GrenedExplotion.cs" />
      <Compile Include="Assets\My Script\Shoot.cs" />
      <Compile Include="Assets\My Script\ThrowGranede.cs" />
      <Compile Include="Assets\My Script\TriggerExample.cs" />

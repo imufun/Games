@@ -1,13 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\My Script\ThrowGranede.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\My Script\GrenedExplotion.cs">
     <Files>
       <File FileName="Assets\My Script\Welcome.cs" Line="1" Column="1" />
       <File FileName="Assets\My Script\Shoot.cs" Line="1" Column="1" />
       <File FileName="Assets\My Script\Detaction.cs" Line="1" Column="1" />
       <File FileName="Assets\My Script\WalkThroughWalk.cs" Line="1" Column="1" />
       <File FileName="Assets\My Script\TriggerExample.cs" Line="1" Column="1" />
-      <File FileName="Assets\My Script\ThrowGranede.cs" Line="32" Column="43" />
+      <File FileName="Assets\My Script\ThrowGranede.cs" Line="1" Column="1" />
+      <File FileName="Assets\My Script\GrenedExplotion.cs" Line="25" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
