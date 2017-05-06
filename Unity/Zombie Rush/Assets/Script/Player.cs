@@ -1,15 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
+
+//Assertions is define true or false;
 
 public class Player : MonoBehaviour {
 
 	[SerializeField] private AudioClip sfxJump;
 
+	[SerializeField] private AudioClip sfxDeath;
+
 	Animator anim;
 	private Rigidbody rigidBody;
 	private bool jump = false;
 	private AudioSource audioSource;
+
+	// Awake always define before the Start  Method. Basically it check something happen the game
+	void Awake(){
+
+		Assert.IsNotNull (sfxJump);
+		Assert.IsNotNull (sfxDeath);
+	}
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +49,14 @@ public class Player : MonoBehaviour {
 			jump = false;
 			rigidBody.velocity = new Vector2 (0, 0);
 			rigidBody.AddForce (new Vector2(0, 100f), ForceMode.Impulse);
+		}
+	}
+
+	void OnCollisionEnter(Collision	 collision){
+		if (collision.gameObject.tag == "obstacle") {
+			rigidBody.AddForce (new Vector2(-50,20), ForceMode.Impulse);
+			rigidBody.detectCollisions = false;
+			audioSource.PlayOneShot (sfxDeath);
 		}
 	}
 }
