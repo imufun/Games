@@ -33,13 +33,16 @@ public class Player : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () {	
+		if (!GameManager.instance.GameOver && GameManager.instance.GameStarted	) {
 
-		if(Input.GetMouseButtonDown(0)){
-			anim.Play ("jump");
-			audioSource.PlayOneShot(sfxJump);
-			rigidBody.useGravity = true;
-			jump = true;
+			if(Input.GetMouseButtonDown(0)){
+				GameManager.instance.playerStartedGame ();
+				anim.Play ("jump");
+				audioSource.PlayOneShot(sfxJump);
+				rigidBody.useGravity = true;
+				jump = true;
+			}
 		}
 	}
 
@@ -49,6 +52,7 @@ public class Player : MonoBehaviour {
 			jump = false;
 			rigidBody.velocity = new Vector2 (0, 0);
 			rigidBody.AddForce (new Vector2(0, 100f), ForceMode.Impulse);
+		//	GameManager.instance.gameOver = true;
 		}
 	}
 
@@ -57,6 +61,7 @@ public class Player : MonoBehaviour {
 			rigidBody.AddForce (new Vector2(-50,20), ForceMode.Impulse);
 			rigidBody.detectCollisions = false;
 			audioSource.PlayOneShot (sfxDeath);
+			GameManager.instance.playerCllided ();
 		}
 	}
 }
