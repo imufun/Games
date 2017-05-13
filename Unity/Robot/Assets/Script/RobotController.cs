@@ -10,6 +10,20 @@ public class RobotController : MonoBehaviour {
 
 	Animator anim;
 
+	bool Grounded = false;
+
+	public Transform groundCheck;
+
+	//
+	float groundRadis = 0.2f;
+
+	public float jumpForce = 700f;
+
+
+	public LayerMask whatIsGroud;
+
+
+	bool doubleJump = false;
 
 	void Start(){
 	
@@ -18,6 +32,16 @@ public class RobotController : MonoBehaviour {
 
 
 	void FixedUpdate(){
+
+		Grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadis, whatIsGroud);
+
+		anim.SetBool ("Ground",Grounded);
+
+		// double jump check
+		if (Grounded)
+			doubleJump = false;
+
+		anim.SetFloat ("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
 
 		float move = Input.GetAxis ("Horizontal");
 		GetComponent<Rigidbody2D> ().velocity = new Vector2 (move * topSpeed, GetComponent<Rigidbody2D>().velocity.y);
@@ -29,6 +53,16 @@ public class RobotController : MonoBehaviour {
 			Filp ();
 		else if (move < 0 && facingRight)
 			Filp ();
+	}
+
+	void Update(){
+		if((Grounded || !doubleJump) && Input.GetKeyDown(KeyCode.Space)){
+			anim.SetBool ("Ground", false);
+			GetComponent<Rigidbody2D> ().AddForce (new Vector2(0, jumpForce));
+
+			if (!doubleJump && !Grounded)
+				doubleJump = true;
+		}
 	}
 
 	void Filp(){
